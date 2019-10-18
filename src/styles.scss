@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/cobalt-dandilion.css';
+
+$color-cobalt : #0A626E;
+$color-dandilion : #CB9F3A;
+
+body {
+    position: relative;
+    min-height: 100%;
+    background-color: #0A626E;
+}
+body:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background-image: url(./assets/always-grey.png);
+    left: 0;
+    background-blend-mode: screen;
+    z-index: -11;
+}

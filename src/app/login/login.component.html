@@ -1,0 +1,18 @@
+<div *ngIf="!isLoggedin" class="app-login">
+    <div class="app-logo">
+        <img src="../assets/logo.png" id="login-logo"/>
+        <p>PROJIDY</p>
+    </div>
+
+    <mat-form-field>
+        <input #un matInput placeholder="Username" >
+    </mat-form-field>
+            
+    <mat-form-field>
+            <input #pw matInput placeholder="Password" type="password" >
+    </mat-form-field>
+
+    <button mat-stroked-button 
+        color="primary"
+        (click)="__login(un.value,pw.value)">LOGIN</button>
+</div>
