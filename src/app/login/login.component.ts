@@ -10,7 +10,7 @@ export class LoginComponent implements OnInit {
   
   constructor(private _loaderService: LoginService) {}
 
-  isLoggedin : boolean = true;
+  isLoggedin : boolean = false;
 
   __login(un: string, pw: string){
     this.isLoggedin = un == "admin" && pw == "admin";
