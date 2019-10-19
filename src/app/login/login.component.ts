@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -8,18 +9,19 @@ import { LoginService } from '../services/login.service'
 })
 export class LoginComponent implements OnInit {
   
-  constructor(private _loaderService: LoginService) {}
+  constructor(private _loaderService: LoginService, private router: Router) {}
 
-  isLoggedin : boolean = false;
+  isLogin : boolean = false;
 
   __login(un: string, pw: string){
-    this.isLoggedin = un == "admin" && pw == "admin";
-    this._loaderService.setLoader(this.isLoggedin);
-    console.log(this.isLoggedin, " ", un, " ", pw);
+    this.isLogin = un == "admin" && pw == "admin";
+    this._loaderService.setLoader(this.isLogin);
+    console.log(this.isLogin, " ", un, " ", pw);
+    this.router.navigate(['home']);
   }
 
   ngOnInit() { // this will set the loader value
-    this._loaderService.setLoader(this.isLoggedin);
+    this._loaderService.setLoader(this.isLogin);
   }
 
 }
