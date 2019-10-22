@@ -17,7 +17,10 @@ export class LoginComponent implements OnInit {
     this.isLogin = un == "admin" && pw == "admin";
     this._loaderService.setLoader(this.isLogin);
     console.log(this.isLogin, " ", un, " ", pw);
-    this.router.navigate(['home']);
+    if (this.isLogin)
+      this.router.navigate(['main/dashboard']);
+    if (!this.isLogin)
+      alert("Wrong username or password!");
   }
 
   ngOnInit() { // this will set the loader value

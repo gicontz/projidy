@@ -13,10 +13,37 @@ $form_tb_pad: 45px;
     margin-left: calc((#{$form_width} + (#{$form_lr_pad} * 2)) / 2 * -1);
     background-color: $form_bg_color;
     padding: $form_tb_pad $form_lr_pad;
+    
+    div, mat-form-field {
+        display: block;
+        width: 100%;
+    }
+    button {
+        width: 100%;
+    }
+    
+    input {
+        color: #565656;
+    }
 }
-.app-login div, .app-login mat-form-field {
-    display: block;
-    width: 100%;
+
+.app-login:before {
+    content: '';
+    width: 150px;
+    height: 150px;
+    border: 2px solid #1faec1;
+    position: absolute;
+    top: -79px;
+    left: -79px;
+}
+.app-login:after {
+    content: '';
+    width: 125px;
+    height: 125px;
+    border: 2px solid #deb82a;
+    position: absolute;
+    top: -30px;
+    left: -30px;
 }
 #login-logo {
     max-width: 150px;
@@ -30,27 +57,6 @@ $form_tb_pad: 45px;
     text-align: center;
     margin: 0;
     margin-top: -15px;
-}
-.app-login button {
-    width: 100%;
-}
-.app-login.ng-star-inserted:before {
-    content: '';
-    width: 150px;
-    height: 150px;
-    border: 2px solid #1faec1;
-    position: absolute;
-    top: -79px;
-    left: -79px;
-}
-.app-login.ng-star-inserted:after {
-    content: '';
-    width: 125px;
-    height: 125px;
-    border: 2px solid #deb82a;
-    position: absolute;
-    top: -30px;
-    left: -30px;
 }
 
 @media screen and (max-width: 720px){

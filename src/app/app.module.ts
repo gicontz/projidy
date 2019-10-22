@@ -14,7 +14,10 @@ import { MatInputModule } from '@angular/material';
 import { HttpClientModule } from '@angular/common/http';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { ContentPageComponent } from './content-page/content-page.component';
-import { ContentManagerComponent } from './content-manager/content-manager.component';
+import { SearchComponent } from './search/search.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProjectsComponent } from './projects/projects.component';
+import { NewsfeedComponent } from './newsfeed/newsfeed.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { ContentManagerComponent } from './content-manager/content-manager.compo
     LoginComponent,
     SidebarComponent,
     ContentPageComponent,
-    ContentManagerComponent
+    SearchComponent,
+    DashboardComponent,
+    ProjectsComponent,
+    NewsfeedComponent
   ],
   imports: [
     HttpClientModule,

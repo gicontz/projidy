@@ -1,11 +1,14 @@
 <div class="sidebar">
-    <div class="menu-sidebar">
-        <div class="profile-box">
-            <mat-icon>arrow_forward_ios</mat-icon>
-            <div class="profile-frame">
-                <img src=""/>
-                <p class="name">Johnny Cross</p>
-            </div>
+    <div class="profile-box">
+        <div class="profile-frame">
+            <img id="app-logo" src="assets/logo.png" />
         </div>
     </div>
+    <div class="menu-sidebar">
+        <ul class="app-menu">
+            <li *ngFor="let page of pages"><a [routerLink]="['/' + homepage,page.link]"><mat-icon>{{page.icon}}</mat-icon><span>{{page.page}}</span></a></li>
+        </ul>
+    </div>
+  
+    <button class="btn btn-default toggle-btn" (click)="__toggleSidebar()"> <mat-icon>arrow_forward_ios</mat-icon> </button>
 </div>

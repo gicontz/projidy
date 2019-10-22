@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from '../services/login.service'
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-content-page',
@@ -7,13 +8,19 @@ import { LoginService } from '../services/login.service'
   styleUrls: ['./content-page.component.scss']
 })
 export class ContentPageComponent implements OnInit {
-  @Input() isloggedin : boolean;
+  isloggedin : boolean = false;
+  page : any;
+  toggled : boolean;
 
-  constructor(private _loaderService: LoginService) {}
+  constructor(private _loaderService: LoginService,
+              private router: Router) {}
 
   ngOnInit() {
-    this._loaderService.loader.subscribe(load => { 
-      this.isloggedin = load;
+    this._loaderService.loader.subscribe(load => {
+      if(typeof(load) == "boolean")
+        this.isloggedin = load;
+      if(typeof(load) == "object")
+        this.router.navigate(["login"]);
      });
   }
 

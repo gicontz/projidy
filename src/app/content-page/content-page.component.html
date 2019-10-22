@@ -1,5 +1,6 @@
-<div *ngIf="isloggedin">
-    <app-header></app-header>
-    <app-sidebar></app-sidebar>
-    <app-content-manager></app-content-manager>
+<div *ngIf="isloggedin" class="no-scroll full-height">
+    <div class="row full-height">
+        <app-sidebar class="col-md-2 app-component"></app-sidebar>
+        <app-header class="col-md-10 app-component"></app-header>
+    </div>
 </div>

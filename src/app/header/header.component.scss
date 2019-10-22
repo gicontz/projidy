@@ -1,3 +1,41 @@
+$dark-cobalt: #1C203D;
+$light-cobalt: #272C4A;
+
 header {
     z-index: 9;
+    max-height: 100px;
+    width: 100%;
+    background-color: $dark-cobalt;    
+    padding: 10px;
+    margin: 0;
+    display: flex;
+}
+app-content-manager {
+    display: block;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 100%;
+}
+img.profile-photo {
+    width: 50px;
+    border-radius: 50%;
+}
+.header-right{
+    text-align: right;
+    align-self: center;
+}
+.header-right .btn:focus, .header-left .btn:focus{
+    box-shadow: none;
+}
+.header-right .btn:active, .header-left .btn:active{
+    color: $light-cobalt;
+}
+.header-left {
+    padding-left: 0;
+}
+.header-right > * {
+    margin-right: 25px;
+}
+#header-container{
+    height: 100%;
 }
